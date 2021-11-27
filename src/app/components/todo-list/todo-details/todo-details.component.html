@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>
+    {{ task.title }}
+</h1>
+<div mat-dialog-content>
+    <strong>Descrição:</strong>
+    <p>{{ task.description }}</p>
+
+    <strong>Prioridade:</strong>
+    <p>{{ priority(task) }}</p>
+
+    <strong>Status:</strong>
+    <p>{{ task.done ? 'Concluída' : 'Pendente' }}</p>
+</div>
+<div mat-dialog-actions class="buttons">
+    <button mat-raised-button (click)="close()">Fechar</button>
+    <button mat-raised-button routerLink="/tarefa/atualizar/{{ task.id }}" (click)="close()" color="primary">Editar</button>
+</div>

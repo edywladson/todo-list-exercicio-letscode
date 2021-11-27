@@ -1,0 +1,71 @@
+.mat-progress-spinner {
+    margin: 50px auto;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.task-title {
+    cursor: pointer;
+}
+
+.task-completed {
+    text-decoration: unset;
+}
+
+.title-checked-tasks {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.priority-high {
+    border-left: 5px solid #E03131;
+}
+
+.priority-medium {
+    border-left: 5px solid #FCC64F;
+}
+
+.priority-low {
+    border-left: 5px solid #4772FA;
+}
+
+.priority-none {
+    border-left: 5px solid #FFF;
+}
+
+
+.mat-list-base {
+    padding-top: 0;
+}
+
+.mat-expansion-panel-header {
+    padding: 0;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    padding: 0 !important;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #9d9fa3 !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #9d9fa3 !important;
+}
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+    background-color: #9d9fa3 !important;
+}
+
+::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #9d9fa3 !important;
+}

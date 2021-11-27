@@ -1,0 +1,22 @@
+<div class="container">
+    <img class="logo" src="assets/img/todo-login.png" alt="logo">
+
+    <mat-card class="mat-elevation-z3 form-login">
+        <mat-card-title class="title">
+            Login
+        </mat-card-title>
+
+        <form action="">
+            <mat-form-field>
+                <input matInput type="text" name="email" placeholder="E-mail" [(ngModel)]="usuario.email">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="password" name="password" placeholder="Senha" [(ngModel)]="usuario.password">
+            </mat-form-field>
+        </form>
+
+        <button mat-raised-button color="primary" (click)="fazerLogin()" class="btn-login">
+        Entrar
+        </button>
+    </mat-card>
+</div>

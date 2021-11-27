@@ -1,0 +1,30 @@
+<mat-card class="mat-elevation-z3" *ngIf="task">
+    <mat-card-title class="title">
+        Excluir Tarefa
+    </mat-card-title>
+
+    <form action="">
+        <mat-checkbox name="done" [(ngModel)]="task.done" class="status" color="primary" disabled> Status </mat-checkbox>
+        <mat-form-field>
+            <input matInput type="text" name="title" placeholder="Título" [(ngModel)]="task.title" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" name="description" placeholder="Descrição" [(ngModel)]="task.description" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select name="priority" placeholder="Prioridade" [(ngModel)]="task.priority" disabled>
+                <mat-option value="low">Baixa</mat-option>
+                <mat-option value="medium">Média</mat-option>
+                <mat-option value="high">Alta</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="warn" (click)="deleteTask()">
+        Excluir
+    </button>
+
+    <button mat-raised-button routerLink="/">
+        Cancelar
+    </button>
+</mat-card>

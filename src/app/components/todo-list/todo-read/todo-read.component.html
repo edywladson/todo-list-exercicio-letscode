@@ -1,0 +1,66 @@
+<ng-template class="spinner" #displaySpinner>
+    <mat-spinner></mat-spinner>
+</ng-template>
+
+<div *ngIf="todoList$ | async as tasksList; else displaySpinner">
+    <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="title-checked-tasks">
+                Tarefas Pendentes
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+            <div *ngFor="let task of tasksList; index as id">
+                <div class="task" *ngIf="!task.done" [class]="priorityColor(task)">
+                    <mat-checkbox [checked]="task.done" (change)="checkTask($event, task)"></mat-checkbox>
+
+                    <mat-list-item class="task-title" (click)="showTaskDetails(task)">
+                        {{ task.title }}
+                    </mat-list-item>
+
+                    <a mat-icon-button color="primary" routerLink="/tarefa/atualizar/{{ task.id }}" matTooltip="Editar">
+                        <i class="material-icons">
+                            edit
+                        </i>
+                    </a>
+                    <a mat-icon-button color="warn" routerLink="/tarefa/excluir/{{ task.id }}" matTooltip="Excluir">
+                        <i class="material-icons">
+                            delete
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </mat-list>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="title-checked-tasks">
+                Tarefas Concluídas
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+            <div *ngFor="let task of tasksList; index as id" class="task-completed" appCompletedTasks>
+                <div class="task" *ngIf="task.done" [class]="priorityColor(task)">
+                    <mat-checkbox [checked]="task.done" (change)="checkTask($event, task)"></mat-checkbox>
+
+                    <mat-list-item class="task-title" (click)="showTaskDetails(task)">
+                        {{ task.title }}
+                    </mat-list-item>
+
+                    <a mat-icon-button color="primary" routerLink="/tarefa/atualizar/{{ task.id }}" matTooltip="Editar">
+                        <i class="material-icons">
+                            edit
+                        </i>
+                    </a>
+                    <a mat-icon-button color="warn" routerLink="/tarefa/excluir/{{ task.id }}" matTooltip="Excluir">
+                        <i class="material-icons">
+                            delete
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </mat-list>
+    </mat-expansion-panel>
+</div>

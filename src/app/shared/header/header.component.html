@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="header-content" *ngIf="mostrarMenu">
+  <a routerLink="/">
+    <img class="logo" src="assets/img/todo-header.png" alt="logo">
+  </a>
+
+  <div class="header-buttons">
+    <button routerLink="tarefa/criar" routerLinkActive="activated" mat-raised-button color="basic">
+      <i class="material-icons">
+        add
+      </i>
+      Criar Tarefa
+    </button>
+    <button mat-raised-button color="warn" (click)="logoutUser()">
+      <i class="material-icons">
+        logout
+      </i>
+      Sair
+    </button>
+  </div>
+</mat-toolbar>

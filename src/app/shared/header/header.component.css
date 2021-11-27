@@ -1,0 +1,23 @@
+.logo {
+    max-width: 120px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.header-buttons button {
+    margin-left: 10px;
+}
+
+.mouse-pointer {
+    cursor: pointer;
+}
+
+.activated {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
